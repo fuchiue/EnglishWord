@@ -1,0 +1,58 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+#headerWrap {
+  display: flex;
+}
+
+#title {
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+span {
+  color: rgb(202, 60, 8);
+}
+
+#logo {
+  margin: 0;
+  padding: 3px 0;
+  font-weight: bold;
+  font-size: 36px;
+  height: 1.4em;
+  width: 2.3em;
+  text-align: center;
+  color: yellow;
+  background-color: #396bc9;
+}
+
+#headerWrap {
+  position: relative;
+  border: solid;
+  height: 56px;
+}
+
+#contentWrap {
+  min-height: 100%;
+  margin-bottom: -50px;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+  margin: 50px 50px 50px 50px;
+}
+
+footer {
+  display: flex;
+  text-align: right;
+}
