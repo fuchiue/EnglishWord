@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>英単語道場</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="css/index.css">
 </head>
 
@@ -24,39 +25,39 @@
 
         <!-- メイン部 -->
         <div id="contentWrap">
-            <div id="maincontent">
-                <div id="siteguide">
-                    <h2>英単語道場へようこそ</h2>
-                    <p>サイトの説明</p>
-                </div>
+            <h2>英単語道場へようこそ</h2>
+            <div id="siteguide">
+                <p>サイトの説明</p>
                 <form id="form">
                     <div id="difficulty">
-                        <input type="checkbox" id="easy" name="easy" checked>
-                        <label for="easy">easy</label>
-                        <input type="checkbox" id="nomal" name="nomal">
-                        <label for="nomal">nomal</label>
-                        <input type="checkbox" id="hard" name="hard">
-                        <label for="hard">hard</label>
-                        <input type="checkbox" id="veryhard" name="veryhard">
-                        <label for="veryhard">veryhard</label>
+                        <div id="background">
+                            <input type="checkbox" id="easy" name="easy" checked>
+                            <label for="easy">easy</label>
+                            <input type="checkbox" id="nomal" name="nomal">
+                            <label for="nomal">nomal</label>
+                            <input type="checkbox" id="hard" name="hard">
+                            <label for="hard">hard</label>
+                            <input type="checkbox" id="veryhard" name="veryhard">
+                            <label for="veryhard">veryhard</label>
+                        </div>
                     </div>
                     <div id="nextquestion">
-                        <button type="submit">問題へ</button>
-                    </div>
+                        <button id="font" type="submit"><a id="next" href="questionpage.html">問題へ</a></button>
                 </form>
             </div>
-            <div class="push"></div>
         </div>
-        <!-- メイン部終わり -->
+        <div class="push"></div>
+    </div>
+    <!-- メイン部終わり -->
 
-        <!-- フッター部-->
-        <footer id="footerWrap">
-            <p>&copy; All rights reserved by webcampnavi.</p>
-            <div id="footerlogo">
-                <a href="index.html">英<span>単</span>語道場</a>
-            </div>
-        </footer>
-        <!-- フッター部終わり -->
+    <!-- フッター部-->
+    <footer id="footerWrap">
+        <p>&copy; All rights reserved by webcampnavi.</p>
+        <div id="footerlogo">
+            <a href="index.html">英<span>単</span>語道場</a>
+        </div>
+    </footer>
+    <!-- フッター部終わり -->
     </div>
 </body>
 

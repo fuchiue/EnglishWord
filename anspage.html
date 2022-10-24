@@ -6,14 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>英単語道場</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
     <!-- ヘッダー部 -->
-    <header id="headerWrap">
-        <div id="header">
-            <a href="index.html">
-                <h1>英単語道場</h1>
+    <header id="headerWrap" class="centeringBox">
+        <p id="logo">英</p>
+        <div id="header" class="centeringContent">
+            <a id="title" href="index.html">
+                <h1>英<span>単</span>語道場</h1>
             </a>
         </div>
     </header>
@@ -57,7 +60,7 @@
                 </div>
                 <form id="form"></form>
                 <div id="nextquestion">
-                    <button type="submit">次の問題へ</button>
+                    <button id="font" type="submit"><a id="next" href="questionpage.html">次の問題へ</a></button>
                 </div>
                 </form>
             </div>
@@ -65,9 +68,11 @@
         <!-- メイン部終わり -->
 
         <!-- フッター部-->
-        <footer id="foorerWrap">
+        <footer id="footerWrap">
             <p>&copy; All rights reserved by webcampnavi.</p>
-            <a href="index.html">英単語道場</a>
+            <div id="footerlogo">
+                <a href="index.html">英<span>単</span>語道場</a>
+            </div>
         </footer>
         <!-- フッター部終わり -->
     </div>
