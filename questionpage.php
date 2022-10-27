@@ -1,8 +1,14 @@
 <?php
+$answord;
+$diff = $_POST['level[]'];
+$questSum = $_POST['questSum'];
+$ansSum = $_POST['ansSum'];
+$hitrate = $_POSt['hitrate'];
 include('Until.php');
 $counter = 0;
-$Mon = new Until();
-$quest4 = $Mon -> createMon();
+$Mon = new Until($diff);
+$quest4 = $Mon->createMon();
+$ansid = $Mon->getansid();
 ?>
 
 <!DOCTYPE html>
@@ -35,24 +41,35 @@ $quest4 = $Mon -> createMon();
             <div id="maincontent">
                 <div id="status">
                     <div id="question_number">
-                        <p>N問目</p>
+                        <p>何問目</p>
                     </div>
                     <div id="answer_rate">
-                        <p>正解数:Y回/出題数:N回&#009;<span>正答率--%</span></p>
+                        <p>正解数:<?= $ansSum ?>回/出題数:<?= $questSum ?>回&#009;<span>正答率<?= $hitrate ?>%</span></p>
                     </div>
                 </div>
                 <div id="question_word">
-                    <h3>問題単語</h3>
+                    <h3>
+                        <?php
+                        foreach ($quest4 as $row) {
+                            if ($row['id'] == $ansid) {
+                                echo ($row['word']);
+                                $answord = $row['word'];
+                            }
+                        }
+                        ?>
+                    </h3>
                 </div>
                 <form id="form">
                     <div id="answer_field">
                         <ul id="answer_ul">
-                        <?php foreach($quest4 as $row): ?>
-                            <li>
-                                <button class="ansbutton"><a href="anspage.php"><?= ++$counter?></a></button><br>
-                                <p><?= $row['mean'] ?></p>
-                            </li>
-                        <?php endforeach; unset($row) ?>
+                            <?php foreach ($quest4 as $row) : ?>
+                                <li>
+                                    <button class="ansbutton"><a href="anspage.php"><?= ++$counter ?></a></button><br>
+                                    <p><?= $row['mean'] ?></p>
+                                </li>
+                            <?php endforeach;
+                            unset($row);
+                            ?>
                         </ul>
                     </div>
                     <div id="nextquestion">
