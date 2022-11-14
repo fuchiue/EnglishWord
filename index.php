@@ -28,26 +28,14 @@
             <h2>英単語道場へようこそ</h2>
             <div id="siteguide">
                 <p>サイトの説明</p>
-                <form id="form">
-                    <div id="difficulty">
-                        <div id="background">
-                            <input type="checkbox" id="easy" name="easy" checked>
-                            <label for="easy">easy</label>
-                            <input type="checkbox" id="nomal" name="nomal">
-                            <label for="nomal">nomal</label>
-                            <input type="checkbox" id="hard" name="hard">
-                            <label for="hard">hard</label>
-                            <input type="checkbox" id="veryhard" name="veryhard">
-                            <label for="veryhard">veryhard</label>
-                        </div>
-                    </div>
-                    <div id="nextquestion">
-                        <button id="font" type="submit"><a id="next" href="questionpage.php">問題へ</a></button>
+                <form action="questionpage.php" method="POST">
+                    <input type="hidden" name="questSum" value=0>
+                    <input type="hidden" name="ansSum" value=0>
+                    <input type="hidden" name="hitrate" value=0>
+                    <button id="font" type="submit">問題へ</button>
                 </form>
             </div>
         </div>
-        <div class="push"></div>
-    </div>
     <!-- メイン部終わり -->
 
     <!-- フッター部-->
