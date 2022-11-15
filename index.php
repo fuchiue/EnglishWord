@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>英単語道場</title>
+    <title>英単語道場(一問一答)</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="css/index.css">
+    <meta name=”description“ content="英単語を効率よく一問一答形式で解いていく英単語学習サイトです。TOEICの単語(4080単語)を集中的に対策するコースと48000単語をひたすらに解き続けるコースを選択出来ます">
 </head>
 
 <body>
@@ -25,9 +26,9 @@
 
         <!-- メイン部 -->
         <div id="contentWrap">
-            <h2>英単語道場へようこそ</h2>
+            <h1>英単語道場へようこそ</h1>
             <div id="siteguide">
-                <p>サイトの説明</p>
+                <p>英単語を効率よく一問一答形式で解いていく英単語学習サイトです。TOEICの単語(4080単語)を集中的に対策するコースと48000単語をひたすらに解き続けるコースを選択出来ます</p>
                 <form action="questionpage.php" method="POST">
                     <input type="hidden" name="questSum" value=0>
                     <input type="hidden" name="ansSum" value=0>

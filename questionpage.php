@@ -1,4 +1,9 @@
 <?php
+if (!isset($_POST['table'])) {
+    header("Location: ./index.php");
+    exit;
+}
+
 $answord;
 $questSum = $_POST['questSum'];
 $ansSum = $_POST['ansSum'];
@@ -11,6 +16,7 @@ $Mon = new Until($table);
 $quest4 = $Mon->createMon();
 $ansid = $Mon->getansid();
 $dataStr = urlencode(serialize($quest4));
+
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +26,7 @@ $dataStr = urlencode(serialize($quest4));
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>英単語道場</title>
+    <title>英単語道場(一問一答)</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="css/index.css?v=2">
 </head>
