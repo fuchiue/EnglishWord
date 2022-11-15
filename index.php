@@ -32,20 +32,24 @@
                     <input type="hidden" name="questSum" value=0>
                     <input type="hidden" name="ansSum" value=0>
                     <input type="hidden" name="hitrate" value=0>
+                    <div id=radioButoon>
+                        <input type="radio" name="table" value="toeic_table" checked>TOEIC単語(4060)
+                        <input type="radio" name="table" value="enword_table">英単語集(48000)
+                    </div>
                     <button id="font" type="submit">問題へ</button>
                 </form>
             </div>
         </div>
-    <!-- メイン部終わり -->
+        <!-- メイン部終わり -->
 
-    <!-- フッター部-->
-    <footer id="footerWrap">
-        <p>&copy; All rights reserved by webcampnavi.</p>
-        <div id="footerlogo">
-            <a href="index.php">英<span>単</span>語道場</a>
-        </div>
-    </footer>
-    <!-- フッター部終わり -->
+        <!-- フッター部-->
+        <footer id="footerWrap">
+            <p>&copy; All rights reserved by webcampnavi.</p>
+            <div id="footerlogo">
+                <a href="index.php">英<span>単</span>語道場</a>
+            </div>
+        </footer>
+        <!-- フッター部終わり -->
     </div>
 </body>
 

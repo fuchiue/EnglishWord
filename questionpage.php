@@ -1,14 +1,16 @@
 <?php
 $answord;
-$diff = $_POST['level[]'];
 $questSum = $_POST['questSum'];
 $ansSum = $_POST['ansSum'];
-$hitrate = $_POSt['hitrate'];
+$hitrate = $_POST['hitrate'];
+$table = $_POST['table'];
+
 include('Until.php');
 $counter = 0;
-$Mon = new Until($diff);
+$Mon = new Until($table);
 $quest4 = $Mon->createMon();
 $ansid = $Mon->getansid();
+$dataStr = urlencode(serialize($quest4));
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +22,7 @@ $ansid = $Mon->getansid();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>英単語道場</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/index.css?v=2">
 </head>
 
 <body>
@@ -41,7 +43,7 @@ $ansid = $Mon->getansid();
             <div id="maincontent">
                 <div id="status">
                     <div id="question_number">
-                        <p>何問目</p>
+                        <p><?= $questSum + 1 ?>問目</p>
                     </div>
                     <div id="answer_rate">
                         <p>正解数:<?= $ansSum ?>回/出題数:<?= $questSum ?>回&#009;<span>正答率<?= $hitrate ?>%</span></p>
@@ -53,18 +55,23 @@ $ansid = $Mon->getansid();
                         foreach ($quest4 as $row) {
                             if ($row['id'] == $ansid) {
                                 echo ($row['word']);
-                                $answord = $row['word'];
+                                $answord = "{$row['word']}";
                             }
                         }
                         ?>
                     </h3>
                 </div>
-                <form id="form">
+                <form id="form" method="POST" action="./anspage.php">
+                    <input type="hidden" name="questSum" value=<?= $questSum ?>>
+                    <input type="hidden" name="answord" value="<?= $answord ?>">
+                    <input type="hidden" name="ansSum" value=<?= $ansSum ?>>
+                    <input type="hidden" name="DATA" value="<?= $dataStr ?>">
+                    <input type="hidden" name="table" value="<?= $table ?>">
                     <div id="answer_field">
                         <ul id="answer_ul">
                             <?php foreach ($quest4 as $row) : ?>
                                 <li>
-                                    <button class="ansbutton"><a href="anspage.php"><?= ++$counter ?></a></button><br>
+                                    <button class="ansbutton" type="submit" name="ansButton" value="<?= $row['word'] ?>"><?= ++$counter ?></button><br>
                                     <p><?= $row['mean'] ?></p>
                                 </li>
                             <?php endforeach;
@@ -73,7 +80,7 @@ $ansid = $Mon->getansid();
                         </ul>
                     </div>
                     <div id="nextquestion">
-                        <button id="font" type="submit"><a id="next" href="questionpage.php">次の問題へ</a></button>
+                        <button id="font" type="submit" name="ansButton" value=0>解答へ</button>
                     </div>
                 </form>
             </div>

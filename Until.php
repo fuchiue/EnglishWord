@@ -7,7 +7,7 @@ class Until
   public static $quesnum = 0;
   public static $ansid;
 
-  function __construct($diff)
+  function __construct($getTable)
   {
     try {
       self::$db = new PDO('mysql:dbname=enword;host=localhost;charset=utf8mb4', 'root', 'root');
@@ -16,10 +16,10 @@ class Until
       echo 'DB接続エラー！: ' . $e->getMessage();
     }
     //table名
-    self::$data = 'enword_table';
+    self::$data = $getTable;
     $data = self::$data;
     // 対象テーブルを選択しSELECT文を変数tableへ格納
-    $table = "SELECT word,mean FROM $data";
+    $table = "SELECT word,mean FROM $data ";
     // queryを実行し、結果を変数に格納
     $db = self::$db;
     $sql = $db->query($table);
