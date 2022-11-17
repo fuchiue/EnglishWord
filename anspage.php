@@ -11,6 +11,7 @@ $ansSum = $_POST['ansSum'];
 $DATA = $_POST['DATA'];
 $table = $_POST['table'];
 $ansButton = $_POST['ansButton'];
+$questType = $_POST['questType'];
 $counter = 0;
 
 //配列に変換
@@ -89,11 +90,11 @@ $hitrate = round($hitrate, 2);
                                 <p>
                                     <button id="mean" class="ansbutton"><?= ++$counter ?></button>
                                 <div id="centense">
-                                    <span id="mean" class="japan"><?= $row['mean'] ?></span>
+                                    <span id="mean" class="japan"><?= $questType == 1 ? $row['mean'] : $row['word'] ?></span>
                                 </div>
                                 </p>
                             </li>
-                            <span id="mean" class="eng"><?= "英訳：", $row['word'] ?></span>
+                            <span id="mean" class="eng"><?= $questType == 1 ? $row['word'] : $row['mean'] ?></span>
                             <br>
                         <?php endforeach;
                         unset($row);
@@ -105,6 +106,7 @@ $hitrate = round($hitrate, 2);
                     <input type="hidden" name="ansSum" value=<?= $ansSum ?>>
                     <input type="hidden" name="hitrate" value=<?= $hitrate ?>>
                     <input type="hidden" name="table" value=<?= $table ?>>
+                    <input type="hidden" name="questType" value=<?= $questType ?>>
                     <div id="nextquestion">
                         <button id="nextbutton2" type="submit">次の問題へ</button>
                 </form>
@@ -116,6 +118,7 @@ $hitrate = round($hitrate, 2);
     <!-- フッター部-->
     <footer id="footerWrap">
         <p>&copy; All rights reserved by webcampnavi.</p>
+        <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdddOZf91RJolSAmVTlc5ICXddzDmmZOrl2q9-OTPLUOlTvRA/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">お問い合わせフォームへ</a></p>
         <div id="footerlogo">
             <a href="index.php">英<span>単</span>語道場</a>
         </div>

@@ -103,7 +103,7 @@ input{
   size: 2em;
 }
 
-#radioButoon{
+.radioButoon{
   font-family:  
    HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, 
    Meiryo, Verdana, Helvetica, Arial, sans-serif;
@@ -355,7 +355,7 @@ h3 p{
   }
 }
 
-footer a {
+footer #footerlogo a {
   color: black;
   text-decoration: none;
 }
