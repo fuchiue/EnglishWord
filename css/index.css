@@ -183,7 +183,6 @@ button {
 .eng{
   margin-left:100px;
   margin-bottom: 80px;
-  border-bottom: ;
 }
 
 ul{
@@ -260,6 +259,13 @@ pre p {
     margin: 0;
     padding: 0;
   }
+}
+
+#ok{
+  color: #00ff7f;
+}
+#no{
+  color: #dc143c;
 }
 
 h3 {
