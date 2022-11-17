@@ -35,7 +35,7 @@ class Until
       $recod = mt_rand(1, self::$max);
     }
     unset($recod);
-    echo '<br>';
+    // echo '<br>';
     $data = self::$data;
     // ランダムな４つのレコードを取得するSQL
     $makequest = "SELECT id,word,mean FROM $data WHERE id IN($index[0],$index[1],$index[2],$index[3])";

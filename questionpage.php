@@ -3,7 +3,6 @@ if (!isset($_POST['table'])) {
     header("Location: ./index.php");
     exit;
 }
-
 $answord;
 $questSum = $_POST['questSum'];
 $ansSum = $_POST['ansSum'];
@@ -25,16 +24,16 @@ $dataStr = urlencode(serialize($quest4));
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
     <title>英単語道場(一問一答)</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="css/index.css?v=2">
+    <link rel="stylesheet" href="css/index.css?<?php echo date('YmdHis');?>"/>
+    <meta name=”description“ content="英単語を効率よく一問一答形式で解いていく英単語学習サイトです。TOEICの単語(4080単語)を集中的に対策するコースと48000単語をひたすらに解き続けるコースを選択出来ます">
 </head>
 
 <body>
     <div id="wrapper">
-        <!-- ヘッダー部 -->
-        <header id="headerWrap" class="centeringBox">
+       <!-- ヘッダー部 -->
+       <header id="headerWrap" class="centeringBox">
             <p id="logo">英</p>
             <div id="header" class="centeringContent">
                 <a id="title" href="index.php">
@@ -55,18 +54,16 @@ $dataStr = urlencode(serialize($quest4));
                         <p>正解数:<?= $ansSum ?>回/出題数:<?= $questSum ?>回&#009;<span>正答率<?= $hitrate ?>%</span></p>
                     </div>
                 </div>
-                <div id="question_word">
-                    <h3>
-                        <?php
-                        foreach ($quest4 as $row) {
-                            if ($row['id'] == $ansid) {
-                                echo ($row['word']);
-                                $answord = "{$row['word']}";
-                            }
+                <h3>
+                    <?php
+                    foreach ($quest4 as $row) {
+                        if ($row['id'] == $ansid) {
+                            echo ($row['word']);
+                            $answord = "{$row['word']}";
                         }
-                        ?>
-                    </h3>
-                </div>
+                    }
+                    ?>
+                </h3>
                 <form id="form" method="POST" action="./anspage.php">
                     <input type="hidden" name="questSum" value=<?= $questSum ?>>
                     <input type="hidden" name="answord" value="<?= $answord ?>">
@@ -75,10 +72,16 @@ $dataStr = urlencode(serialize($quest4));
                     <input type="hidden" name="table" value="<?= $table ?>">
                     <div id="answer_field">
                         <ul id="answer_ul">
+                        <br>
                             <?php foreach ($quest4 as $row) : ?>
-                                <li>
-                                    <button class="ansbutton" type="submit" name="ansButton" value="<?= $row['word'] ?>"><?= ++$counter ?></button><br>
-                                    <p><?= $row['mean'] ?></p>
+                                <li id="q">
+                                    <p>
+                                        <button id="mean" class="ansbutton" type="submit" name="ansButton" value="<?= $row['word'] ?>"><?= ++$counter ?></button>
+                                        <div id="centense">
+                                            <span id="mean"><?= $row['mean'] ?></span>
+                                        </div>
+                                    </p>
+                                    <br>
                                 </li>
                             <?php endforeach;
                             unset($row);
@@ -86,7 +89,7 @@ $dataStr = urlencode(serialize($quest4));
                         </ul>
                     </div>
                     <div id="nextquestion">
-                        <button id="font" type="submit" name="ansButton" value=0>解答へ</button>
+                        <button id="nextbutton2" type="submit" name="ansButton" value=0>解答へ</button>
                     </div>
                 </form>
             </div>

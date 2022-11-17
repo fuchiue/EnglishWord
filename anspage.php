@@ -11,6 +11,7 @@ $ansSum = $_POST['ansSum'];
 $DATA = $_POST['DATA'];
 $table = $_POST['table'];
 $ansButton = $_POST['ansButton'];
+$counter=0;
 
 //配列に変換
 $quest4 = unserialize(urldecode($DATA));
@@ -39,69 +40,74 @@ $hitrate = round($hitrate, 2);
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
     <title>英単語道場(一問一答)</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="css/index.css?v=2">
+    <link rel="stylesheet" href="css/index.css?<?php echo date('YmdHis');?>"/>
+    <meta name=”description“ content="英単語を効率よく一問一答形式で解いていく英単語学習サイトです。TOEICの単語(4080単語)を集中的に対策するコースと48000単語をひたすらに解き続けるコースを選択出来ます">
 </head>
 
 <body>
-    <!-- ヘッダー部 -->
-    <header id="headerWrap" class="centeringBox">
-        <p id="logo">英</p>
-        <div id="header" class="centeringContent">
-            <a id="title" href="index.php">
-                <h1>英<span>単</span>語道場</h1>
-            </a>
-        </div>
-    </header>
-    <!-- ヘッダー部終わり -->
-    <!-- メイン部 -->
     <div id="wrapper">
-        <div id="contentWrap">
-            <div id="maincontent">
-                <div id="status">
-                    <div id="question_number">
-                        <p><?= $questSum . "問目" ?></p>
-                    </div>
-                    <div id="answer_rate">
-                        <p>正解数:<?= $ansSum ?>回/出題数:<?= $questSum ?>回&#009;<span>正答率<?= $hitrate ?>%</span></p>
-                    </div>
-                </div>
-                <h3><?= $ansres ?></h3>
-                <div class="ansRight">
-                    <p>問題</p>
-                    <p>あなたの解答</p>
-                </div>
-                <div class="ansLeft">
-                    <p><?= $answord ?></p>
-                    <p><?= $ansButton ?></p>
-                </div>
+       <!-- ヘッダー部 -->
+       <header id="headerWrap" class="centeringBox">
+            <p id="logo">英</p>
+            <div id="header" class="centeringContent">
+                <a id="title" href="index.php">
+                    <h1>英<span>単</span>語道場</h1>
+                </a>
+            </div>
+        </header>
+        <!-- ヘッダー部終わり -->
 
+    <!-- メイン部 -->
+    <div id="contentWrap">
+        <div id="maincontent">
+            <div id="status">
+                <div id="question_number">
+                    <p><?= $questSum . "問目" ?></p>
+                </div>
+                <div id="answer_rate">
+                    <p>正解数:<?= $ansSum ?>回/出題数:<?= $questSum ?>回&#009;<span>正答率<?= $hitrate ?>%</span></p>
+                </div>
+            </div>
+            <div id="anscheck">
+                <h3>
+                    <p id="judge">【<?= $ansres ?>】</p>
+                    <p id="ques">問題 <?= $answord ?></p>
+                    <p id="yourans">あなたの回答 <?= $ansButton ?></>
+                </h3>
+            </div>
                 <div id="answer_field">
                     <ul id="answer_ul">
+                    <br>
                         <?php foreach ($quest4 as $row) : ?>
-                            <li>
-                                <button class="ansbutton"><?= $row['word'] ?></button><br>
-                                <p><?= $row['mean'] ?></p>
+                            <li id="a">
+                                <p>
+                                    <button id="mean" class="ansbutton"><?= ++$counter ?></button>
+                                    <div id="centense">
+                                        <span id="mean" class="japan"><?= $row['mean'] ?></span>
+                                    </div>
+                                </p>
                             </li>
+                            <span id="mean" class="eng"><?= "英訳：",$row['word'] ?></span>
+                            <br>
                         <?php endforeach;
                         unset($row);
                         ?>
                     </ul>
                 </div>
                 <form id="form" method="POST" action="./questionpage.php">
+                    <input type="hidden" name="questSum" value=<?= $questSum ?>>
+                    <input type="hidden" name="ansSum" value=<?= $ansSum ?>>
+                    <input type="hidden" name="hitrate" value=<?= $hitrate ?>>
+                    <input type="hidden" name="table" value=<?= $table ?>>
                     <div id="nextquestion">
-                        <input type="hidden" name="questSum" value=<?= $questSum ?>>
-                        <input type="hidden" name="ansSum" value=<?= $ansSum ?>>
-                        <input type="hidden" name="hitrate" value=<?= $hitrate ?>>
-                        <input type="hidden" name="table" value=<?= $table ?>>
-                        <button id="font" type="submit">次の問題へ</button>
-                    </div>
+                    <button id="nextbutton2" type="submit">次の問題へ</button>
                 </form>
             </div>
         </div>
-        <!-- メイン部終わり -->
+    </div>
+    <!-- メイン部終わり -->
 
         <!-- フッター部-->
         <footer id="footerWrap">
