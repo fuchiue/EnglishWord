@@ -10,7 +10,7 @@ class Until
   function __construct($getTable)
   {
     try {
-      self::$db = new PDO('mysql:dbname=enword;host=localhost;charset=utf8mb4', 'root', 'root');
+      self::$db = new PDO('mysql:dbname=enword;host=localhost', 'FuchiueShousei', '40061231KajikawaHiroki');
       // echo "接続OK！" . "\n";
     } catch (PDOException $e) {
       echo 'DB接続エラー！: ' . $e->getMessage();

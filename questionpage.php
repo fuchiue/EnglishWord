@@ -95,7 +95,7 @@ $dataStr = urlencode(serialize($quest4));
                         </ul>
                     </div>
                     <div id="nextquestion">
-                        <button id="nextbutton2" type="submit" name="ansButton" value=0>解答へ</button>
+                        <button id="nextbutton2" type="submit" name="ansButton" value="noans">解答へ</button>
                     </div>
                 </form>
             </div>
@@ -104,10 +104,12 @@ $dataStr = urlencode(serialize($quest4));
 
         <!-- フッター部-->
         <footer id="footerWrap">
-            <p>&copy; All rights reserved by webcampnavi.</p>
-            <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdddOZf91RJolSAmVTlc5ICXddzDmmZOrl2q9-OTPLUOlTvRA/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">お問い合わせフォームへ</a></p>
+            <div id ="profile">
+                <p><a id ="mail" href="https://docs.google.com/forms/d/e/1FAIpQLSdddOZf91RJolSAmVTlc5ICXddzDmmZOrl2q9-OTPLUOlTvRA/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">お問い合わせフォームへ</a></p>
+                <p id="copylight">&copy; All rights reserved by webcampnavi.</p>
+            </div>
             <div id="footerlogo">
-                <a href="index.php">英<span>単</span>語道場</a>
+                <a href="index.php" id="footer">英<span>単</span>語道場</a>
             </div>
         </footer>
         <!-- フッター部終わり -->

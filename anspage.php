@@ -24,7 +24,7 @@ if ($ansButton == $answord) {
     $ansres = '正解';
     $ansSum++;
     $ansid = 'ok';
-} elseif ($ansButton == 0) {
+} elseif (strcmp($ansButton,'noans') == 0) {
     $ansres = "解答なし";
     $ansButton = "なし";
     $ansid = 'nomal';
@@ -117,13 +117,15 @@ $hitrate = round($hitrate, 2);
 
     <!-- フッター部-->
     <footer id="footerWrap">
-        <p>&copy; All rights reserved by webcampnavi.</p>
-        <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdddOZf91RJolSAmVTlc5ICXddzDmmZOrl2q9-OTPLUOlTvRA/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">お問い合わせフォームへ</a></p>
-        <div id="footerlogo">
-            <a href="index.php">英<span>単</span>語道場</a>
-        </div>
-    </footer>
-    <!-- フッター部終わり -->
+            <div id ="profile">
+                <p><a id ="mail" href="https://docs.google.com/forms/d/e/1FAIpQLSdddOZf91RJolSAmVTlc5ICXddzDmmZOrl2q9-OTPLUOlTvRA/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">お問い合わせフォームへ</a></p>
+                <p id="copylight">&copy; All rights reserved by webcampnavi.</p>
+            </div>
+            <div id="footerlogo">
+                <a href="index.php" id="footer">英<span>単</span>語道場</a>
+            </div>
+        </footer>
+        <!-- フッター部終わり -->
     </div>
 </body>
 

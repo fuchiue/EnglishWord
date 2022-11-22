@@ -34,12 +34,12 @@
                 <input type="hidden" name="ansSum" value=0>
                 <input type="hidden" name="hitrate" value=0>
                 <div class="radioButoon">
-                    <label><input type="radio" name="questType" value=1 checked> ( 　単語->意味　 ) </label>
-                    <label><input type="radio" name="questType" value=2> ( 　意味->単語　 ) </label>
+                    <label id="how"><input type="radio" name="questType" value=1 checked> 単語->意味</label>
+                    <label id="how"><input type="radio" name="questType" value=2> 意味->単語</label>
                 </div>
                 <div class="radioButoon">
-                    <label><input type="radio" name="table" value="toeic_table" checked>TOEIC単語(4,080問)</label>
-                    <label><input type="radio" name="table" value="enword_table">英単語集(48,000問)</label>
+                    <label id="table"><input type="radio" name="table" value="toeic_table" checked>TOEIC単語(4,080問)</label>
+                    <label id="table"><input type="radio" name="table" value="enword_table">英単語集(48,000問)</label>
                 </div>
                 <div id="nextbutton">
                     <button id="nextbutton2" type="submit">問題へ</button>
@@ -50,8 +50,10 @@
 
         <!-- フッター部-->
         <footer id="footerWrap">
-            <p>&copy; All rights reserved by webcampnavi.</p>
-            <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdddOZf91RJolSAmVTlc5ICXddzDmmZOrl2q9-OTPLUOlTvRA/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">お問い合わせフォームへ</a></p>
+            <div id ="profile">
+                <p><a id ="mail" href="https://docs.google.com/forms/d/e/1FAIpQLSdddOZf91RJolSAmVTlc5ICXddzDmmZOrl2q9-OTPLUOlTvRA/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">お問い合わせフォームへ</a></p>
+                <p id="copylight">&copy; All rights reserved by webcampnavi.</p>
+            </div>
             <div id="footerlogo">
                 <a href="index.php" id="footer">英<span>単</span>語道場</a>
             </div>
