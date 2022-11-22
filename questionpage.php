@@ -32,6 +32,7 @@ $dataStr = urlencode(serialize($quest4));
 </head>
 
 <body>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5088437373794003" crossorigin="anonymous"></script>
     <div id="wrapper">
         <!-- ヘッダー部 -->
         <header id="headerWrap" class="centeringBox">
@@ -104,8 +105,8 @@ $dataStr = urlencode(serialize($quest4));
 
         <!-- フッター部-->
         <footer id="footerWrap">
-            <div id ="profile">
-                <p><a id ="mail" href="https://docs.google.com/forms/d/e/1FAIpQLSdddOZf91RJolSAmVTlc5ICXddzDmmZOrl2q9-OTPLUOlTvRA/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">お問い合わせフォームへ</a></p>
+            <div id="profile">
+                <p><a id="mail" href="https://docs.google.com/forms/d/e/1FAIpQLSdddOZf91RJolSAmVTlc5ICXddzDmmZOrl2q9-OTPLUOlTvRA/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">お問い合わせフォームへ</a></p>
                 <p id="copylight">&copy; All rights reserved by webcampnavi.</p>
             </div>
             <div id="footerlogo">
